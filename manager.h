@@ -4,6 +4,7 @@
 #include <QObject>
 #include "activitymonitor.h"
 #include "activitylogger.h"
+#include "activityserver.h"
 
 class Manager : public QObject
 {
@@ -17,12 +18,16 @@ signals:
 public slots:
     void start();
 
+private /*methods*/:
+    void setupActivityServer();
+
 private slots:
     void logStatus(ActivityState state);
 
 private /*variables*/:
     ActivityMonitor m_activityMonitor;
     ActivityLogger m_activityLogger;
+    ActivityServer m_activityServer;
 };
 
 #endif // MANAGER_H

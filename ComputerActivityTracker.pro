@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,9 +17,11 @@ CONFIG += c++11
 SOURCES += main.cpp\
     activitymonitor.cpp \
     manager.cpp \
-    activitylogger.cpp
+    activitylogger.cpp \
+    activityserver.cpp
 
 HEADERS  += \
     activitymonitor.h \
     manager.h \
-    activitylogger.h
+    activitylogger.h \
+    activityserver.h

@@ -15,7 +15,7 @@ public:
     explicit ActivityLogger(QObject *parent = 0);
 
 public slots:
-    void logActivityState(ActivityState state) const;
+    void updateActivityState(ActivityState state) const;
 };
 
 #endif // ACTIVITYLOGGER_H
