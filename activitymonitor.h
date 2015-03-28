@@ -20,7 +20,6 @@ enum class ActivityState { Inactive, Active };
 class ActivityMonitor : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(int inactivityInterval READ inactivityInterval WRITE setInactivityInterval)
 
 public:
     explicit ActivityMonitor(QObject *parent = 0);
@@ -62,7 +61,8 @@ private /*variables*/:
     const int ACTIVITY_TIMER_INTERVAL = 500 /*ms*/;
     QTimer m_activityTimer;
 
-    int m_inactivityInterval = 300000;
+    const int DEFAULT_INACTIVITY_INTERVAL = 300000 /*ms*/;
+    int m_inactivityInterval;
 };
 
 #endif // ACTIVITYMONITOR_H

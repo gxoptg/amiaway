@@ -23,15 +23,17 @@ int getCurrentTimestamp()
 
 
 /************************* CLASS METHODS ******************/
-ActivityMonitor::ActivityMonitor(QObject *parent) : QObject(parent)
+ActivityMonitor::ActivityMonitor(QObject *parent) :
+    ActivityMonitor(ActivityMonitor::DEFAULT_INACTIVITY_INTERVAL, parent)
+{
+
+}
+
+ActivityMonitor::ActivityMonitor(int inactivityInterval, QObject *parent) :
+    QObject(parent), m_inactivityInterval(inactivityInterval)
 {
     initState();
     initTimer();
-}
-
-ActivityMonitor::ActivityMonitor(int inactivityInterval, QObject *parent) : ActivityMonitor(parent)
-{
-    setInactivityInterval(inactivityInterval);
 }
 
 /**
