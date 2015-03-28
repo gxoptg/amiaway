@@ -15,7 +15,7 @@ ActivityLogger::ActivityLogger(QObject *parent) : QObject(parent)
 void ActivityLogger::updateActivityState(ActivityState state) const
 {
     std::string currentDateTime = QDateTime::currentDateTime().toString().toStdString();
-    std::string stateString = stateStringMap[state].toStdString();
+    std::string stateString = STATE_STRING_MAP[state].toStdString();
     std::cout
         << currentDateTime
         << " "

@@ -62,7 +62,7 @@ QUrlQuery ActivityServer::buildRequestQuery(ActivityState state) const
     QUrlQuery query;
     query.addQueryItem("computerId", m_computerId);
     query.addQueryItem("secretKey", m_secretKey);
-    query.addQueryItem("state", stateStringMap[state]);
+    query.addQueryItem("state", STATE_STRING_MAP[state]);
     return query;
 }
 
