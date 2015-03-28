@@ -5,7 +5,7 @@
 
 const QString SERVER_SETTINGS_FILE = "./server_settings.ini";
 
-Manager::Manager(QObject *parent) : QObject(parent), m_activityMonitor(1500)
+Manager::Manager(QObject *parent) : QObject(parent)
 {
     setupActivityServer();
 }
