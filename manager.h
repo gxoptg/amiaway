@@ -21,9 +21,6 @@ public slots:
 private /*methods*/:
     void setupActivityServer();
 
-private slots:
-    void logStatus(ActivityState state);
-
 private /*variables*/:
     ActivityMonitor m_activityMonitor;
     ActivityLogger m_activityLogger;

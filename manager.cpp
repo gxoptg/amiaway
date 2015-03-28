@@ -32,9 +32,3 @@ void Manager::setupActivityServer()
     m_activityServer.setSecretKey(settings.value("secret_key").toString());
 }
 
-void Manager::logStatus(ActivityState state)
-{
-    QString stateString = (state == ActivityState::Active) ? "Active" : "Inactive";
-    qDebug() << QDateTime::currentDateTime().toString() << stateString;
-}
-
