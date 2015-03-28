@@ -15,7 +15,11 @@ CONFIG += c++11
 
 
 SOURCES += main.cpp\
-    activitymonitor.cpp
+    activitymonitor.cpp \
+    manager.cpp \
+    activitylogger.cpp
 
 HEADERS  += \
-    activitymonitor.h
+    activitymonitor.h \
+    manager.h \
+    activitylogger.h

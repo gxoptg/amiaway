@@ -6,9 +6,10 @@
 /**
  * @brief Returns the timestamp of the last input event.
  */
-int getLastInputTimestamp()
+quint64 getLastInputTickCount()
 {
     PLASTINPUTINFO lastInputInfo = new LASTINPUTINFO;
+    lastInputInfo->cbSize = sizeof(LASTINPUTINFO);
     GetLastInputInfo(lastInputInfo);
     return lastInputInfo->dwTime;
 }
@@ -16,9 +17,9 @@ int getLastInputTimestamp()
 /**
  * @brief Returns the timestamp of this exact moment.
  */
-int getCurrentTimestamp()
+quint64 getCurrentTickCount()
 {
-    return QDateTime::currentMSecsSinceEpoch();
+    return GetTickCount();
 }
 
 
@@ -50,8 +51,8 @@ int ActivityMonitor::inactivityInterval() const
 void ActivityMonitor::initState()
 {
     // Retrieve the last input timestamp
-    int lastInputTimestamp = getLastInputTimestamp();
-    int currentTimestamp = getCurrentTimestamp();
+    quint64 lastInputTimestamp = getLastInputTickCount();
+    quint64 currentTimestamp = getCurrentTickCount();
 
     // Deside which state is user in now
     ActivityState state = (currentTimestamp - lastInputTimestamp < m_inactivityInterval) ? ActivityState::Active : ActivityState::Inactive;
@@ -67,7 +68,8 @@ void ActivityMonitor::initState()
 void ActivityMonitor::initTimer()
 {
     m_activityTimer.setInterval(ACTIVITY_TIMER_INTERVAL);
-    connect(&m_activityTimer, &QTimer::timeout, this, &ActivityMonitor::checkStateChanged);
+    connect(&m_activityTimer, SIGNAL(timeout()), SLOT(checkStateChanged()));
+    m_activityTimer.start();
 }
 
 /**
@@ -76,8 +78,8 @@ void ActivityMonitor::initTimer()
 void ActivityMonitor::checkStateChanged()
 {
     // Retrieve the last input timestamp
-    int lastInputTimestamp = getLastInputTimestamp();
-    int currentTimestamp = getCurrentTimestamp();
+    int lastInputTimestamp = getLastInputTickCount();
+    int currentTimestamp = getCurrentTickCount();
 
     // Deside which state is user in now
     ActivityState state = (currentTimestamp - lastInputTimestamp < m_inactivityInterval) ? ActivityState::Active : ActivityState::Inactive;
