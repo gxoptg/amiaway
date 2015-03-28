@@ -3,11 +3,6 @@
 #include <QNetworkReply>
 #include <QSettings>
 
-const QMap<ActivityState, QString> stateStringMap = {
-    std::make_pair(ActivityState::Active, "active"),
-    std::make_pair(ActivityState::Inactive, "inactive")
-};
-
 ActivityServer::ActivityServer(QObject *parent) : QObject(parent)
 {
 

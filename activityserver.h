@@ -5,7 +5,7 @@
 #include <QObject>
 #include <QUrlQuery>
 #include <QNetworkReply>
-#include "activitymonitor.h"
+#include "common.h"
 
 /**
  * @brief The ActivityServer class sends the user’s activity updates to a server.

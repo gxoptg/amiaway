@@ -3,8 +3,7 @@
 
 #include <QObject>
 #include <QTimer>
-
-enum class ActivityState { Inactive, Active };
+#include "common.h"
 
 /**
  * @brief The ActivityMonitor class tracks the activity and inactivity periods on the computer.

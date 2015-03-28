@@ -2,12 +2,6 @@
 #include <QDateTime>
 #include <QMap>
 #include <iostream>
-#include <utility>
-
-const QMap<ActivityState, QString> stateStringMap = {
-    std::make_pair(ActivityState::Active, "Active"),
-    std::make_pair(ActivityState::Inactive, "Inactive")
-};
 
 ActivityLogger::ActivityLogger(QObject *parent) : QObject(parent)
 {

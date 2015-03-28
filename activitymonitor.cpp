@@ -55,7 +55,7 @@ void ActivityMonitor::initState()
     quint64 currentTimestamp = getCurrentTickCount();
 
     // Deside which state is user in now
-    ActivityState state = (currentTimestamp - lastInputTimestamp < m_inactivityInterval) ? ActivityState::Active : ActivityState::Inactive;
+    ActivityState state = (currentTimestamp - lastInputTimestamp < uint(m_inactivityInterval)) ? ActivityState::Active : ActivityState::Inactive;
 
     // Save the timestamp and the state
     m_lastInputEventTimestamp = lastInputTimestamp;

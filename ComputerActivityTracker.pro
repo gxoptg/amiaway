@@ -24,4 +24,5 @@ HEADERS  += \
     activitymonitor.h \
     manager.h \
     activitylogger.h \
-    activityserver.h
+    activityserver.h \
+    common.h

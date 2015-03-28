@@ -2,7 +2,7 @@
 #define ACTIVITYLOGGER_H
 
 #include <QObject>
-#include "activitymonitor.h"
+#include "common.h"
 
 /**
  * @brief The ActivityLogger class logs the user’s activity changes.
