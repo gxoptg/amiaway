@@ -19,6 +19,7 @@ public slots:
     void start();
 
 private /*methods*/:
+    void setupActivityMonitor();
     void setupActivityServer();
 
 private /*variables*/:
