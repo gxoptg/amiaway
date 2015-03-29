@@ -46,6 +46,14 @@ int ActivityMonitor::inactivityInterval() const
 }
 
 /**
+ * @brief Sets the inactivity interval.
+ */
+void ActivityMonitor::setInactivityInterval(quint64 inactivityInterval)
+{
+    m_inactivityInterval = inactivityInterval;
+}
+
+/**
  * @brief Initializes the current user’s state.
  */
 void ActivityMonitor::initState()

@@ -45,6 +45,7 @@ signals:
     void activityStateChanged(ActivityState);
 
 public slots:
+    void setInactivityInterval(quint64 inactivityInterval);
 
 private /*methods*/:
     void initState();
