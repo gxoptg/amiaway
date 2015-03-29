@@ -58,7 +58,7 @@ private /*variables*/:
     ActivityState m_activityState;
     int m_lastInputEventTimestamp = 0;
 
-    const int ACTIVITY_TIMER_INTERVAL = 500 /*ms*/;
+    const int TIMER_INTERVAL = 500 /*ms*/;
     QTimer m_activityTimer;
 
     const int DEFAULT_INACTIVITY_INTERVAL = 300000 /*ms*/;

@@ -75,7 +75,7 @@ void ActivityMonitor::initState()
  */
 void ActivityMonitor::initTimer()
 {
-    m_activityTimer.setInterval(ACTIVITY_TIMER_INTERVAL);
+    m_activityTimer.setInterval(TIMER_INTERVAL);
     connect(&m_activityTimer, SIGNAL(timeout()), SLOT(checkStateChanged()));
     m_activityTimer.start();
 }
